@@ -8,6 +8,12 @@ import {
   placeTodo,
   toggleStatus,
 } from "./todoSlice";
+import {
+  ADD_BUTTON_TEXT,
+  APP_TITLE,
+  CANCEL_BUTTON_TEXT,
+  UPDATE_BUTTON_TEXT,
+} from "../../constants/todoConstant";
 import Todo from "../../components/todo";
 import Button from "../../components/button";
 import Input from "../../components/input";
@@ -49,20 +55,20 @@ const Todos = () => {
 
   return (
     <div className="todo-app">
-      <h1 className="todo-title">Todo App</h1>
+      <h1 className="todo-title">{APP_TITLE}</h1>
       <div className="input-container">
         <Input
           type={"text"}
           value={inputBox.text}
           handler={handleInputChange}
-          classname="input-field"
+          className="input-field"
         />
         {inputBox.buttonText === "add" ? (
-          <Button handler={handleAddTodo}>ADD</Button>
+          <Button handler={handleAddTodo}>{ADD_BUTTON_TEXT}</Button>
         ) : (
           <>
-            <Button handler={handleUpdateTodo}>Update</Button>{" "}
-            <Button handler={handleCancelUpdate}>Cancel</Button>{" "}
+            <Button handler={handleUpdateTodo}>{UPDATE_BUTTON_TEXT}</Button>{" "}
+            <Button handler={handleCancelUpdate}>{CANCEL_BUTTON_TEXT}</Button>{" "}
           </>
         )}
       </div>

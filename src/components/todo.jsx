@@ -1,5 +1,9 @@
 import Input from "../components/input";
 import Button from "../components/button";
+import {
+  DELETE_BUTTON_TEXT,
+  EDIT_BUTTON_TEXT,
+} from "../constants/todoConstant";
 
 const Todo = ({ data }) => {
   const { todo, inputBox, handleDelete, handleCheckboxChange, handleEdit } =
@@ -25,14 +29,14 @@ const Todo = ({ data }) => {
         className={"edit"}
         disabled={inputBox.id === id}
       >
-        Edit
+        {EDIT_BUTTON_TEXT}
       </Button>
       <Button
         handler={() => handleDelete(id)}
         disabled={inputBox.id === id}
         className={"delete"}
       >
-        Delete
+        {DELETE_BUTTON_TEXT}
       </Button>
     </article>
   );

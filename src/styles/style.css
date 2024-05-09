@@ -27,11 +27,10 @@ body {
   align-items: center;
   margin-bottom: 20px;
   justify-content: center;
-  /* border: 2px solid black; */
 }
 
 .input-field {
-  width: 300px;
+  width: 500px;
   padding: 8px;
   font-size: 18px;
   border: 1px solid #ccc;
