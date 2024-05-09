@@ -30,18 +30,18 @@ const todoSlice = createSlice({
     todos: initialTodos,
   },
   reducers: {
-    showAllTodo: (state, action) => state,
+    showAllTodo: (state, _action) => state,
     changeInputBox: (state, action) => {
       state.inputBox.text = action.payload;
     },
-    clearInputBox: (state, action) => {
+    clearInputBox: (state, _action) => {
       state.inputBox = {
         text: "",
         buttonText: "add",
         id: null,
       };
     },
-    addTodo: (state, action) => {
+    addTodo: (state, _action) => {
       state.todos.push({
         id: nanoid(),
         text: state.inputBox.text,
@@ -74,7 +74,7 @@ const todoSlice = createSlice({
         return todo;
       });
     },
-    editTodo: (state, action) => {
+    editTodo: (state, _action) => {
       state.todos = state.todos.map((todo) => {
         if (todo.id === state.inputBox.id) {
           return {
